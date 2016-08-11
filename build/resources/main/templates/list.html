@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Organization Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div>
+		<h1>Organizations List</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Organization Name</th>
+					<th>Register Number</th>
+					<th>Registration Date</th>
+					<th>Address</th>
+					<th>Post Code</th>
+					<th>Owner Name</th>
+					<th>Organization Occupation</th>
+					<th>Occupation Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="organization : ${organizations}">
+				<td th:text="${organization.organizationName}"></td>
+				<td th:text="${organization.registerNumber}"></td>
+				<td th:text="${organization.registrationDate}"></td>
+				<td th:text="${organization.organizationAddress}"></td>
+				<td th:text="${organization.organizationPostCode}"></td>
+				<td th:text="${organization.ownerName}"></td>
+				<td th:text="${organization.organizationOccupation}"></td>
+				<td th:text="${organization.occupationDescription}"></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
