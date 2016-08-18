@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Register your organization</h1>
+    <form>
+      <div class="form-group">
+        <label for="organizationName">Name: </label>
+        <input type="text" class="form-control" id="organizationName" required
+		[(ngModel)]="model.organizationName" name = "organizationName">
+      </div>
+      <div class="form-group">
+        <label for="registerNumber">Register number: </label>
+        <input type="text" class="form-control" id="registerNumber" required
+		[(ngModel)]="model.registerNumber" name = "registerNumber">
+      </div>
+	  <div class="form-group">
+        <label for="registrationDate">Registration Date: </label>
+        <input type="date" class="form-control" id="registrationDate" required
+		[(ngModel)]="model.registrationDate" name = "registrationDate">
+      </div>
+	  <div class="form-group">
+        <label for="organizationAddress">Address: </label>
+        <input type="text" class="form-control" id="organizationAddress" required
+		[(ngModel)]="model.organizationAddress" name = "organizationAddress">
+      </div>
+	  <div class="form-group">
+        <label for="organizationPostCode">Post code: </label>
+        <input type="text" class="form-control" id="organizationPostCode" required
+		[(ngModel)]="model.organizationPostCode" name = "organizationPostCode">
+      </div>
+	  <div class="form-group">
+        <label for="ownerName">Owner: </label>
+        <input type="text" class="form-control" id="ownerName" required
+		[(ngModel)]="model.ownerName" name = "ownerName">
+      </div>
+	  <div class="form-group">
+        <label for="organizationOccupation">Oganization occupation: </label>
+        <input type="text" class="form-control" id="organizationOccupation" required
+		[(ngModel)]="model.organizationOccupation" name = "organizationOccupation">
+      </div>
+	  <div class="form-group">
+        <label for="occupationDescription">Occupation description: </label>
+        <input type="textarea" class="form-control" id="occupationDescription" required
+		[(ngModel)]="model.occupationDescription" name = "occupationDescription">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
