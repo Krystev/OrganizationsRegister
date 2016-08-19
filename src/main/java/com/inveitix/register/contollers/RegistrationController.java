@@ -3,20 +3,25 @@ package com.inveitix.register.contollers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.inveitix.register.models.Organization;
 import com.inveitix.register.repositories.OrganizationDao;
 
 @CrossOrigin(origins = "*")
-@Controller
+@RestController
 public class RegistrationController {
 
 	@RequestMapping(value = "/app/root/**", method = RequestMethod.GET)
@@ -26,10 +31,9 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public Organization registerSubmit(@ModelAttribute Organization organization, Model model) {
-		model.addAttribute("organization", organization);
+	public ResponseEntity<Organization> registerSubmit(@RequestBody Organization organization) {
 		create(organization);
-		return organization;
+		return new ResponseEntity<Organization>(organization, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
